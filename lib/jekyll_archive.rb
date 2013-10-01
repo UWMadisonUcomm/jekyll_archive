@@ -18,12 +18,12 @@ module Jekyll
               when 'tag'
                 {
                   :posts => site.tags[obj],
-                  :page_title_prefix => 'Tag: '
+                  :page_title_prefix => site.config["tag_dir_name"] || 'Tag: '
                 }
               when 'category'
                 {
                   :posts => site.categories[obj],
-                  :page_title_prefix => 'Category: '
+                  :page_title_prefix => site.config["category_dir_name"] || 'Category: '
                 }
               end
 
