@@ -28,7 +28,7 @@ module Jekyll
               end
 
       self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), 'archive_page.html')
+      self.read_yaml(File.join(base, '_layouts'), site.config["archive_layout"] || 'archive_page')
 
       self.data['posts'] = page_data[:posts]
       prefix = page_data[:page_title_prefix]
