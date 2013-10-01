@@ -1,6 +1,6 @@
 # JekyllArchive
 
-TODO: Write a gem description
+A Jekyll plugin that builds archive views of your categories and tags. 
 
 ## Installation
 

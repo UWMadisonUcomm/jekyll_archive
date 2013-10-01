@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = JekyllArchive::VERSION
   spec.authors       = ["Nick Weaver"]
   spec.email         = ["jnweaver@wisc.edu"]
-  spec.description   = %q{A Ruby gem for a Jekyll plugin that builds archive views of your categories and tags.}
-  spec.summary       = %q{A Ruby gem for a Jekyll plugin that builds archive views of your categories and tags.}
+  spec.description   = %q{A Jekyll plugin that builds archive views of your categories and tags.}
+  spec.summary       = %q{A Jekyll plugin that builds archive views of your categories and tags.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
