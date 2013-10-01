@@ -18,12 +18,12 @@ module Jekyll
               when 'tag'
                 {
                   :posts => site.tags[obj],
-                  :page_title_prefix => site.config["tag_dir_name"] || 'Tag: '
+                  :page_title_prefix => site.config["tag_title_prefix"] || 'Tag: '
                 }
               when 'category'
                 {
                   :posts => site.categories[obj],
-                  :page_title_prefix => site.config["category_dir_name"] || 'Category: '
+                  :page_title_prefix => site.config["category_title_prefix"] || 'Category: '
                 }
               end
 
@@ -42,8 +42,8 @@ module Jekyll
     safe true
 
     def generate(site)
-      if site.layouts.key? 'archive_page'
-        dir = 'category'
+      if site.layouts.key? site.config["archive_layout"] || 'archive_page'
+        dir = site.config["category_dir_name"] || 'category'
         site.categories.keys.each do |category|
           site.pages << TaxonomyPage.new(site, site.source, File.join(dir, category), category, 'category')
         end
