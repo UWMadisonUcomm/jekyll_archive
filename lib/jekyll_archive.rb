@@ -34,7 +34,7 @@ module Jekyll
 
       self.data['posts'] = page_data[:posts]
       prefix = page_data[:page_title_prefix]
-      self.data['header'] = "#{prefix}#{obj}"
+      self.data['header'] = "#{prefix}#{obj.capitalize }"
 
       self.data['title'] = "#{self.data['header']}: "
     end
