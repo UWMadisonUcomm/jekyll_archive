@@ -7,7 +7,7 @@ require "jekyll_archive/version"
 
 module Jekyll
 
-  class TaxonomyPage < Page
+  class ArchivePage < Page
     def initialize(site, base, dir, obj, type)
       @site = site
       @base = base
@@ -40,19 +40,19 @@ module Jekyll
     end
   end
 
-  class TaxonomyPageGenerator < Generator
+  class ArchivePageGenerator < Generator
     safe true
 
     def generate(site)
       if site.layouts.key? site.config["archive_layout"] || 'archive_page'
         dir = site.config["category_dir_name"] || 'category'
         site.categories.keys.each do |category|
-          site.pages << TaxonomyPage.new(site, site.source, File.join(dir, category), category, 'category')
+          site.pages << ArchivePage.new(site, site.source, File.join(dir, category), category, 'category')
         end
 
         dir = 'tag'
         site.tags.keys.each do |tag|
-          site.pages << TaxonomyPage.new(site, site.source, File.join(dir, tag), tag, 'tag')
+          site.pages << ArchivePage.new(site, site.source, File.join(dir, tag), tag, 'tag')
         end
       end
     end
