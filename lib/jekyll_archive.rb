@@ -50,7 +50,7 @@ module Jekyll
           site.pages << ArchivePage.new(site, site.source, File.join(dir, category), category, 'category')
         end
 
-        dir = 'tag'
+        dir = site.config["tag_dir_name"] || 'tag'
         site.tags.keys.each do |tag|
           site.pages << ArchivePage.new(site, site.source, File.join(dir, tag), tag, 'tag')
         end
